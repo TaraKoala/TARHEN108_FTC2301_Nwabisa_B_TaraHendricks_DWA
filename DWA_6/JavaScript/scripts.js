@@ -63,7 +63,6 @@ const updateRemaining = () => {
     return remaining;
 }
 
-
 const showMore = (event) => {
     event.preventDefault()
     page += 1
@@ -89,8 +88,6 @@ const showMore = (event) => {
         }
     }
 };
-
-
 
 showmoreButton.addEventListener("click", showMore) 
 
