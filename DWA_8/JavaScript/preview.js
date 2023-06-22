@@ -1,5 +1,5 @@
 // shows the first 36 books on the page
-//I made use of the function and DOM to pull elements from the HTML doc, this enables the user to preview the list of books.
+
 const createPreview = (props) => {
     const {author, id, image, title} = props
 
