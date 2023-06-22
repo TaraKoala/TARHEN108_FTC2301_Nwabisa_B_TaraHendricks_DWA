@@ -1,6 +1,6 @@
 class PreviewCreator {
     constructor(props) {
-      this.props = props;
+      this.props = props;/*  */
     }
   
     createPreview() {
