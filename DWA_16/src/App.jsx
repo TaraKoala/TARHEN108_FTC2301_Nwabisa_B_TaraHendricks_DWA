@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable no-unused-vars */
+import React from "react";
+import Navbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
+import Card from "./Components/Card";
+import data from "./Data";
+import katieZaferesImg from "../src/assets/katieZaferes.png";
+import weddingPhotographyImg from "../src/assets/weddingPhotography.png";
+import mountainBikeImg from "../src/assets/mountainBike.png";
+import starImage from "../src/assets/star.png";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const cards = data.map((item) => {
+    let coverImg;
+    if (item.id === 1) {
+      coverImg = katieZaferesImg;
+    } else if (item.id === 2) {
+      coverImg = weddingPhotographyImg;
+    } else if (item.id === 3) {
+      coverImg = mountainBikeImg;
+    }
+
+    return (
+      <Card
+        key={item.id}
+        item={item}
+        />
+    );
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Navbar />
+      <Hero />
+      <section className="cards-list">{cards}</section>
+    </div>
+  );
 }
-
-export default App
